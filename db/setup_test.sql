@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS trap_test;
+CREATE DATABASE trap_test;
