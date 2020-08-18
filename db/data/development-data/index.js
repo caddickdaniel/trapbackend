@@ -1,0 +1,2 @@
+exports.stockData = require('./stock');
+

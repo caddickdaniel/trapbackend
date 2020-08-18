@@ -3,11 +3,11 @@ exports.up = function (connection, Promise) {
     stockTable.increments('stock_id').primary();
     stockTable.string('product_name').notNullable();
     stockTable.string('brewery_name').notNullable();
-    stockTable.integer('abv').notNullable();
+    stockTable.float('abv').notNullable();
     stockTable.string('type').notNullable();
     stockTable.string('place').notNullable();
     stockTable.text('desc');
-    stockTable.integer('price');
+    stockTable.float('price');
   });
 };
 
