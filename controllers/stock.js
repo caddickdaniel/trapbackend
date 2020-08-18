@@ -16,6 +16,21 @@ exports.sendStock = (req, res, next) => {
     .catch(err => next(err));
 };
 
+exports.sendStockByName = (req, res, next) => {
+  const productName = req.params.product_name;
+  getStockByName(productName)
+    .then(([stock]) => {
+      if (!stock) {
+        return Promise.reject({
+          status: 404,
+          message: `That stock doesn't exist`
+        });
+      }
+      res.status(200).send({ stock });
+    })
+    .catch(err => next(err));
+};
+
 exports.sendStockByBrewer = (req, res, next) => {
   const brewerName = req.params.brewer_name;
   getStockByBrewer(brewerName)

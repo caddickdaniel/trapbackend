@@ -15,6 +15,22 @@ exports.getStock = (sort_by = 'place', order = 'desc') =>
     .orderBy(sort_by, order)
     .returning('*');
 
+exports.getStockByName = productName =>
+    connection
+      .select(
+        'stock.product_name',
+        'stock.brewery_name',
+        'stock.abv',
+        'stock.type',
+        'stock.place',
+        'stock.desc',
+        'stock.price'
+      )
+      .groupBy('stock.product_name')
+      .from('stock')
+      .where('stock.product_name', '=', productName)
+      .returning('*');
+
 exports.getStockByBrewer = brewerName =>
   connection
     .select(
