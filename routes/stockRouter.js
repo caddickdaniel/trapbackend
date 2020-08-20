@@ -37,10 +37,4 @@ stockRouter
   .get(sendStockByType)
   .all(handle405);
 
-articleRouter
-  .route('/:article_id/comments')
-  .get(sendCommentsByID)
-  .post(sendNewCommentByID)
-  .all(handle405);
-
-module.exports = articleRouter;
+module.exports = stockRouter;
