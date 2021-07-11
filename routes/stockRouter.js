@@ -17,23 +17,23 @@ stockRouter
   .all(handle405);
 
 stockRouter
-  .route('/:product_name')
+  .route('/product/:product_name')
   .get(sendStockByName)
   .delete(sendDeletedStock)
   .all(handle405);
 
 stockRouter
-  .route('/:brewery_name')
+  .route('/brewery/:brewery_name')
   .get(sendStockByBrewer)
   .all(handle405);
 
 stockRouter
-  .route('/:place')
+  .route('/place/:place')
   .get(sendStockByPlace)
   .all(handle405);
 
 stockRouter
-  .route('/:type')
+  .route('/type/:type')
   .get(sendStockByType)
   .all(handle405);
 

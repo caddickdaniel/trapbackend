@@ -96,6 +96,6 @@ describe('/api', () => {
                     expect(body.stock).to.be.an('object');
                 });
         });
-        it('DELETE/ status 204/ responds with a 204 and no-content', () => request.delete('/api/stock/Beer 1').expect(204));
+        it('DELETE/ status 204/ responds with a 204 and no-content', () => request.delete('/api/stock/product/Beer 1').expect(204));
     });
 });
