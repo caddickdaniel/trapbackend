@@ -90,11 +90,12 @@ describe('/api', () => {
                 .then(({
                     body
                 }) => {
+                    // console.log(body)
                     expect(body.stock.product_name).to.equal('The new beer');
                     expect(body.stock).to.contain.keys('abv', 'type');
                     expect(body.stock).to.be.an('object');
                 });
         });
+        it('DELETE/ status 204/ responds with a 204 and no-content', () => request.delete('/api/stock/Beer 1').expect(204));
     });
-
 });
